@@ -11,6 +11,11 @@ pipeline {
         sh 'gradle test'
       }
     }
+    stage('Code Check') {
+      steps {
+        sh 'gradle check'
+      }
+    }
   }
     post {
     always {
