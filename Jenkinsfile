@@ -16,15 +16,20 @@ pipeline {
         sh 'gradle check'
       }
     }
+    stage('') {
+      steps {
+        findbugs()
+      }
+    }
   }
-    post {
+  environment {
+    gradle = '5.5-rc3'
+  }
+  post {
     always {
       junit '**/build/test-results/**/TEST-*.xml'
 
     }
 
-  }
-  environment {
-    gradle = '5.5-rc3'
   }
 }
