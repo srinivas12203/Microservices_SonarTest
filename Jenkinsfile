@@ -16,11 +16,6 @@ pipeline {
         sh 'gradle check'
       }
     }
-    stage('') {
-      steps {
-        findbugs()
-      }
-    }
   }
   environment {
     gradle = '5.5-rc3'
